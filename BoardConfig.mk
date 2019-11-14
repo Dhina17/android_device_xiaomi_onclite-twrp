@@ -103,3 +103,6 @@ TW_NO_USB_STORAGE := true
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
+
+# Platform version
+PLATFORM_VERSION := 16.1.0
