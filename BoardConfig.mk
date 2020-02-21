@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+DEVICE_PATH := device/xiaomi/onclite
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -44,13 +46,11 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-TARGET_KERNEL_SOURCE := kernel/xiaomi/onclite
-TARGET_KERNEL_CONFIG := onclite-perf_defconfig
+TARGET_PREBUILT_KERNEL :=  $(DEVICE_PATH)/prebuilt/zImage
+BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_DTBOIMG_PARTITION_SIZE := 8388608
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_VERSION := 4.9
 
 # AVB
 BOARD_AVB_ENABLE := true
